@@ -4,18 +4,16 @@ import { useLocalSearchParams } from 'expo-router'
 import useGet from '../(hooks)/useGet'
 
 import { Text } from 'react-native-paper'
+import CharacterCard from '../(components)/CharacterCard'
 export default function Page() {
     const { id } = useLocalSearchParams()
-    const { data, isLoading, error } = useGet('character/' + id)
-    console.log(data)
+    const { data, isLoading, error } = useGet(`character/${id}`)
+
 
     if (isLoading) return <ActivityIndicator size="large" />
     if (error) return <Text variant='displaySmall'>{error}</Text>
     return (
-        <View style={{ flex: 1 }}>
-            <Text>Done</Text>
-            <Text>{JSON.stringify(data)}</Text>
-        </View>
+        <CharacterCard character={data} />
     )
 }
 

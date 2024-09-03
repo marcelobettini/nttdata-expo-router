@@ -2,14 +2,13 @@ import { useState, useEffect } from "react";
 const baseUrl = "https://rickandmortyapi.com/api/";
 
 const useGet = (endpoint: string) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any>();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     const getData = async () => {
       try {
         setIsLoading(true);
-        console.log(baseUrl + endpoint);
         const res = await fetch(baseUrl + endpoint);
         if (res.ok) {
           const json = await res.json();
