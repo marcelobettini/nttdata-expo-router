@@ -1,7 +1,7 @@
 import { ActivityIndicator, StyleSheet, ScrollView, FlatList } from 'react-native'
-import CharacterName from './(components)/CharacterName'
+import CharacterName from '../(components)/CharacterName'
 import { Text } from 'react-native-paper'
-import useGet from './(hooks)/useGet'
+import useGet from '../(hooks)/useGet'
 
 
 export default function list() {

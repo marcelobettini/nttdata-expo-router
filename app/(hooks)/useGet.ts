@@ -29,7 +29,7 @@ const useGet = (endpoint: string) => {
       }
     };
     getData();
-  }, []);
+  }, [endpoint]);
 
   return { data, isLoading, error };
 };
