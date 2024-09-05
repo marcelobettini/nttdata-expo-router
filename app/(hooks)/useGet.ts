@@ -5,6 +5,7 @@ const useGet = (endpoint: string) => {
   const [data, setData] = useState<any>();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
     const getData = async () => {
       try {
